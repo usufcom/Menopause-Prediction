@@ -173,7 +173,17 @@ Stratifying the logistic model by smoking status shows that smokers reach the sa
 
 ![Estimated Menopause Risk Curve](images/Estimated%20Menopause%20Risk%20Curve.png)
 
-Patient-level risk curve derived from the trained MLP model, with threshold markers at 50% and 90% probability. For this profile, the model estimates **50% menopause risk at age 50.1** and **90% risk at age 55.2**, highlighting the steep transition window between ages 45 and 55.
+Patient-level risk curve from the trained **MLP** model (`estimate_menopause_age_curve`), sweeping age from 40–65 while holding other features fixed. Example patient profile:
+
+| Feature | Value | Description |
+|---|---|---|
+| `RHQ010` | 13 | Age at first menstrual period |
+| `RHQ420` | 1 (Yes) | Ever taken birth control pills |
+| `WHD120` | 160 lb | Self-reported weight at age 25 |
+| `WHD130` | 65 in | Self-reported height at age 25 |
+| `SMQ020` | 1 (Yes) | Smoked ≥100 cigarettes in lifetime |
+
+For this profile, the model estimates **50% menopause risk at age 50.1** and **90% risk at age 55.2**, highlighting the steep transition window between ages 45 and 55.
 
 ## Project structure
 
