@@ -192,15 +192,40 @@ Menopause_Prediction/
 ├── Load_process_data_v1.py                    # NHANES data loading and preprocessing
 ├── Menopause_analysis_and Prediction_V6.ipynb # Analysis, modeling, and visualization
 ├── df_classification.csv                      # Preprocessed feature matrix
+├── requirements.txt                           # Python dependencies
 ├── Data/                                      # NHANES .xpt source files
 ├── images/                                    # Result figures
 └── README.md
 ```
 
+## Requirements
+
+- Python 3.10+ (tested with Python 3.12)
+- Dependencies listed in `requirements.txt`:
+
+| Package | Used for |
+|---|---|
+| `pyreadstat` | Reading NHANES `.xpt` files |
+| `pandas`, `numpy` | Data manipulation |
+| `matplotlib`, `seaborn` | Plots and EDA visuals |
+| `statsmodels` | Logistic regression growth curves |
+| `scikit-learn` | ML pipelines, tuning, and evaluation |
+| `jupyter` | Running the analysis notebook |
+
 ## How to run
 
 1. Place NHANES `.xpt` files in the `Data/` folder (see [NHANES data page](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Questionnaire&CycleBeginYear=2017))
-2. Install dependencies: `pip install pyreadstat pandas numpy matplotlib seaborn statsmodels scikit-learn`
+
+2. Create a virtual environment (recommended) and install dependencies:
+
+```bash
+cd Menopause_Prediction
+python -m venv .venv
+source .venv/bin/activate   # Linux/macOS
+# .venv\Scripts\activate    # Windows
+pip install -r requirements.txt
+```
+
 3. Open and run `Menopause_analysis_and Prediction_V6.ipynb`, or preprocess standalone:
 
 ```python
